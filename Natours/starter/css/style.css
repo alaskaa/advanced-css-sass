@@ -55,6 +55,7 @@ body {
 	top: 40%; /* these two properties are in relation to the parent element */
 	left: 50%;
 	transform: translate(-50%, -50%); /* translate takes it to elements X and Y itself */
+	text-align: center;
 }
 
 .heading-primary {
@@ -62,6 +63,7 @@ body {
 	text-transform: uppercase;
 
 	backface-visibility: hidden; /* gets rid of shakiness at end */
+	margin-bottom: 60px;
 }
 
 .heading-primary-main {
@@ -122,4 +124,69 @@ body {
 		opacity: 1;
 		transform:translate(0); /* this means the value of where the element would normally be so 0 */
 	}
+}
+
+@keyframes moveInBottom {
+	0% {
+		opacity: 0;
+		transform: translateY(30px); /* as it moves in from the right from the x axis*/
+	}
+
+	100% {
+		opacity: 1;
+		transform:translate(0); /* this means the value of where the element would normally be so 0 */
+	}
+}
+
+.btn:link,
+btn:visited { /* link is a special pseudoclass */
+	text-transform: uppercase;
+	text-decoration: none;
+	padding: 15px 40px;
+	display: inline-block; /* always apply this if you want to give height or padding to elements */
+	border-radius: 100px;
+	transition: all .2s; /* need to move this to initial state of btn */
+	position: relative;
+}
+
+.btn:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* shadow in x direction, y, blur is bigger so it seems further away */ 
+}
+
+.btn:active {
+	transform: translateY(-1px); /* this moves in relation to initial state - goes back to 2px to get to only -1px */
+	box-shadow: 0 5px 10px rgba(0,0,0,0.2); /* shadow is becoming less blurry */
+}
+
+.btn-white {
+	background-color: #fff;
+	color: #777;
+}
+
+.btn::after { /* after element is treated like a child of the element */
+	content: ""; 
+	display: inline-block;
+	height: 100%;
+	width: 100%;
+	border-radius: 100px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	transition: all 0.3s;
+}
+
+.btn-white::after {
+	background-color: #fff;
+}
+
+.btn:hover::after {
+	transform: scaleX(1.4) scaleY(1.6);
+	opacity: 0; /* to fade it out */
+}
+
+.btn-animated {
+	animation: moveInBottom .5s ease-out .75s;
+	animation-fill-mode: backwards; /* applies the 0% before the animation starts */
 }
