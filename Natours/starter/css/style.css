@@ -46,6 +46,10 @@ body {
 	height: 35px;
 }
 
+/* .logo:hover {
+	animation: moveInRight 1s ease-in;
+} would play the animation on hover */
+
 .text-box {
 	position: absolute;
 	top: 40%; /* these two properties are in relation to the parent element */
@@ -56,6 +60,8 @@ body {
 .heading-primary {
 	color: #ffffff;
 	text-transform: uppercase;
+
+	backface-visibility: hidden; /* gets rid of shakiness at end */
 }
 
 .heading-primary-main {
@@ -63,6 +69,13 @@ body {
 	font-size: 60px;
 	font-weight: 400;
 	letter-spacing: 35px;
+
+	animation-name: moveInLeft; /* can provide animation name here and the duration for the class we apply it too */
+	animation-duration: 1.5s;
+	animation-timing-function: ease-out;
+
+	/* animation-delay: 3s; 
+	animation-iteration-count: 3; */
 }
 
 .heading-primary-sub {
@@ -70,4 +83,43 @@ body {
 	font-size: 20px;
 	font-weight: 700;
 	letter-spacing: 17.4px;
+
+	animation: moveInRight 1s ease-out;
+}
+
+@keyframes moveInLeft {
+	0% {
+		opacity: 0;
+		/* transform: translateX(-100px); as it moves in from the right from the x axis */
+		transform: translateY(-100px) rotate(180deg);
+	}
+
+	60% {
+		transform: rotate(360deg);
+	}
+
+	80% {
+		transform: translateX(10px);
+	}
+
+	100% {
+		opacity: 1;
+		transform:translate(0); /* this means the value of where the element would normally be so 0 */
+	}
+}
+
+@keyframes moveInRight {
+	0% {
+		opacity: 0;
+		transform: translateX(100px); /* as it moves in from the right from the x axis*/
+	}
+
+	80% {
+		transform: translateX(-10px);
+	}
+
+	100% {
+		opacity: 1;
+		transform:translate(0); /* this means the value of where the element would normally be so 0 */
+	}
 }
