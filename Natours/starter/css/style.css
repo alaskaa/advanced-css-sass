@@ -7,19 +7,27 @@ Dark green: #28b485
 
 */
 
-* {
+*, 
+*::after,
+*::before {
 	margin: 0;
 	padding: 0;
-	box-sizing: border-box;
+	box-sizing: inherit;
+}
+
+html {
+	font-size: 62.5%; /* 1rem is 10px; - default 16px would equate 100% */
 }
 
 body {
 	font-family: "Lato", sans-serif;
 	font-weight: 400;
-	font-size: 16px;
+	/* font-size: 16px; */
 	line-height: 1.7;
 	color: #777777;
-	padding: 30px;
+	padding: 3rem;
+
+	box-sizing: border-box;
 }
 
 .header {
@@ -38,12 +46,12 @@ body {
 
 .logo-box {
 	position: absolute;
-	top: 40px;
-	left: 40px;
+	top: 4rem;
+	left: 4rem;
 }
 
 .logo {
-	height: 35px;
+	height: 3.5rem;
 }
 
 /* .logo:hover {
@@ -63,14 +71,14 @@ body {
 	text-transform: uppercase;
 
 	backface-visibility: hidden; /* gets rid of shakiness at end */
-	margin-bottom: 60px;
+	margin-bottom: 6rem;
 }
 
 .heading-primary-main {
 	display: block;
-	font-size: 60px;
+	font-size: 6rem;
 	font-weight: 400;
-	letter-spacing: 35px;
+	letter-spacing: 3.5rem;
 
 	animation-name: moveInLeft; /* can provide animation name here and the duration for the class we apply it too */
 	animation-duration: 1.5s;
@@ -82,9 +90,9 @@ body {
 
 .heading-primary-sub {
 	display: block;
-	font-size: 20px;
+	font-size: 2rem;
 	font-weight: 700;
-	letter-spacing: 17.4px;
+	letter-spacing: 1.75rem;
 
 	animation: moveInRight 1s ease-out;
 }
@@ -93,7 +101,7 @@ body {
 	0% {
 		opacity: 0;
 		/* transform: translateX(-100px); as it moves in from the right from the x axis */
-		transform: translateY(-100px) rotate(180deg);
+		transform: translateY(-10rem) rotate(180deg);
 	}
 
 	60% {
@@ -101,7 +109,7 @@ body {
 	}
 
 	80% {
-		transform: translateX(10px);
+		transform: translateX(10rem);
 	}
 
 	100% {
@@ -113,11 +121,11 @@ body {
 @keyframes moveInRight {
 	0% {
 		opacity: 0;
-		transform: translateX(100px); /* as it moves in from the right from the x axis*/
+		transform: translateX(10rem); /* as it moves in from the right from the x axis*/
 	}
 
 	80% {
-		transform: translateX(-10px);
+		transform: translateX(-1rem);
 	}
 
 	100% {
@@ -129,7 +137,7 @@ body {
 @keyframes moveInBottom {
 	0% {
 		opacity: 0;
-		transform: translateY(30px); /* as it moves in from the right from the x axis*/
+		transform: translateY(3rem); /* as it moves in from the right from the x axis*/
 	}
 
 	100% {
@@ -142,21 +150,22 @@ body {
 btn:visited { /* link is a special pseudoclass */
 	text-transform: uppercase;
 	text-decoration: none;
-	padding: 15px 40px;
+	padding: 1.5rem 4rem;
 	display: inline-block; /* always apply this if you want to give height or padding to elements */
-	border-radius: 100px;
+	border-radius: 10rem;
 	transition: all .2s; /* need to move this to initial state of btn */
 	position: relative;
+	font-size: 1.6rem;
 }
 
 .btn:hover {
 	transform: translateY(-3px);
-	box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* shadow in x direction, y, blur is bigger so it seems further away */ 
+	box-shadow: 0 1rem 2rem rgba(0,0,0,.2); /* shadow in x direction, y, blur is bigger so it seems further away */ 
 }
 
 .btn:active {
 	transform: translateY(-1px); /* this moves in relation to initial state - goes back to 2px to get to only -1px */
-	box-shadow: 0 5px 10px rgba(0,0,0,0.2); /* shadow is becoming less blurry */
+	box-shadow: 0 .5rem 1rem rgba(0,0,0,.2); /* shadow is becoming less blurry */
 }
 
 .btn-white {
@@ -169,7 +178,7 @@ btn:visited { /* link is a special pseudoclass */
 	display: inline-block;
 	height: 100%;
 	width: 100%;
-	border-radius: 100px;
+	border-radius: 10rem;
 	position: absolute;
 	top: 0;
 	left: 0;
