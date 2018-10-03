@@ -44,13 +44,13 @@ body {
 	clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 }
 
-.logo-box {
+.header__logo-box {
 	position: absolute;
 	top: 4rem;
 	left: 4rem;
 }
 
-.logo {
+.header__logo {
 	height: 3.5rem;
 }
 
@@ -58,7 +58,7 @@ body {
 	animation: moveInRight 1s ease-in;
 } would play the animation on hover */
 
-.text-box {
+.header__text-box {
 	position: absolute;
 	top: 40%; /* these two properties are in relation to the parent element */
 	left: 50%;
@@ -74,7 +74,7 @@ body {
 	margin-bottom: 6rem;
 }
 
-.heading-primary-main {
+.heading-primary--main {
 	display: block;
 	font-size: 6rem;
 	font-weight: 400;
@@ -88,7 +88,7 @@ body {
 	animation-iteration-count: 3; */
 }
 
-.heading-primary-sub {
+.heading-primary--sub {
 	display: block;
 	font-size: 2rem;
 	font-weight: 700;
@@ -168,7 +168,7 @@ btn:visited { /* link is a special pseudoclass */
 	box-shadow: 0 .5rem 1rem rgba(0,0,0,.2); /* shadow is becoming less blurry */
 }
 
-.btn-white {
+.btn--white {
 	background-color: #fff;
 	color: #777;
 }
@@ -186,7 +186,7 @@ btn:visited { /* link is a special pseudoclass */
 	transition: all 0.3s;
 }
 
-.btn-white::after {
+.btn--white::after {
 	background-color: #fff;
 }
 
@@ -195,7 +195,7 @@ btn:visited { /* link is a special pseudoclass */
 	opacity: 0; /* to fade it out */
 }
 
-.btn-animated {
+.btn--animated {
 	animation: moveInBottom .5s ease-out .75s;
 	animation-fill-mode: backwards; /* applies the 0% before the animation starts */
 }
