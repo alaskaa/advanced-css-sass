@@ -14,6 +14,8 @@ $color-primary-dark: #28b485;
 $color-grey-dark: #777;
 $color-white:#fff;
 
+$color-black: #000;
+
 *, 
 *::after,
 *::before {
@@ -49,28 +51,28 @@ body {
 	background-position: top;
 	/* clip-path: polygon(0 100px, 100% 50%, 0 100%); */
 	clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-}
 
-.header__logo-box {
-	position: absolute;
+	&__logo-box {
+		position: absolute;
 	top: 4rem;
 	left: 4rem;
-}
+	}
 
-.header__logo {
-	height: 3.5rem;
-}
-
-/* .logo:hover {
-	animation: moveInRight 1s ease-in;
-} would play the animation on hover */
-
-.header__text-box {
-	position: absolute;
-	top: 40%; /* these two properties are in relation to the parent element */
-	left: 50%;
-	transform: translate(-50%, -50%); /* translate takes it to elements X and Y itself */
-	text-align: center;
+	&__logo {
+		height: 3.5rem;
+	}
+	
+	/* .logo:hover {
+		animation: moveInRight 1s ease-in;
+	} would play the animation on hover */
+	
+	&__text-box {
+		position: absolute;
+		top: 40%; /* these two properties are in relation to the parent element */
+		left: 50%;
+		transform: translate(-50%, -50%); /* translate takes it to elements X and Y itself */
+		text-align: center;
+	}
 }
 
 .heading-primary {
@@ -79,30 +81,32 @@ body {
 
 	backface-visibility: hidden; /* gets rid of shakiness at end */
 	margin-bottom: 6rem;
+
+	&--main {
+		display: block;
+		font-size: 6rem;
+		font-weight: 400;
+		letter-spacing: 3.5rem;
+	
+		animation-name: moveInLeft; /* can provide animation name here and the duration for the class we apply it too */
+		animation-duration: 1.5s;
+		animation-timing-function: ease-out;
+	
+		/* animation-delay: 3s; 
+		animation-iteration-count: 3; */
+	}
+	
+	&--sub {
+		display: block;
+		font-size: 2rem;
+		font-weight: 700;
+		letter-spacing: 1.75rem;
+	
+		animation: moveInRight 1s ease-out;
+	}
 }
 
-.heading-primary--main {
-	display: block;
-	font-size: 6rem;
-	font-weight: 400;
-	letter-spacing: 3.5rem;
 
-	animation-name: moveInLeft; /* can provide animation name here and the duration for the class we apply it too */
-	animation-duration: 1.5s;
-	animation-timing-function: ease-out;
-
-	/* animation-delay: 3s; 
-	animation-iteration-count: 3; */
-}
-
-.heading-primary--sub {
-	display: block;
-	font-size: 2rem;
-	font-weight: 700;
-	letter-spacing: 1.75rem;
-
-	animation: moveInRight 1s ease-out;
-}
 
 @keyframes moveInLeft {
 	0% {
@@ -153,8 +157,9 @@ body {
 	}
 }
 
-.btn:link,
-btn:visited { /* link is a special pseudoclass */
+.btn {
+&:link,
+&:visited { /* link is a special pseudoclass */
 	text-transform: uppercase;
 	text-decoration: none;
 	padding: 1.5rem 4rem;
@@ -165,22 +170,33 @@ btn:visited { /* link is a special pseudoclass */
 	font-size: 1.6rem;
 }
 
-.btn:hover {
+&:hover {
 	transform: translateY(-3px);
-	box-shadow: 0 1rem 2rem rgba(0,0,0,.2); /* shadow in x direction, y, blur is bigger so it seems further away */ 
+	box-shadow: 0 1rem 2rem rgba($color-black,.2); /* shadow in x direction, y, blur is bigger so it seems further away */ 
+
+	&::after {
+		transform: scaleX(1.4) scaleY(1.6);
+		opacity: 0; /* to fade it out */
+	}
+	
+
 }
 
-.btn:active {
+&:active {
 	transform: translateY(-1px); /* this moves in relation to initial state - goes back to 2px to get to only -1px */
-	box-shadow: 0 .5rem 1rem rgba(0,0,0,.2); /* shadow is becoming less blurry */
+	box-shadow: 0 .5rem 1rem rgba($color-black,.2); /* shadow is becoming less blurry */
 }
 
-.btn--white {
+&--white {
 	background-color: $color-white;
 	color: $color-grey-dark;
+
+	&::after {
+		background-color: $color-white;
+	}
 }
 
-.btn::after { /* after element is treated like a child of the element */
+&::after { /* after element is treated like a child of the element */
 	content: ""; 
 	display: inline-block;
 	height: 100%;
@@ -193,16 +209,15 @@ btn:visited { /* link is a special pseudoclass */
 	transition: all 0.3s;
 }
 
-.btn--white::after {
-	background-color: $color-white;
-}
 
-.btn:hover::after {
+
+&:hover::after {
 	transform: scaleX(1.4) scaleY(1.6);
 	opacity: 0; /* to fade it out */
 }
 
-.btn--animated {
+&--animated {
 	animation: moveInBottom .5s ease-out .75s;
 	animation-fill-mode: backwards; /* applies the 0% before the animation starts */
+}
 }
