@@ -9,6 +9,6 @@
   "author": "Sibylle Sehl",
   "license": "ISC",
   "devDependencies": {
-    "node-sass": "^4.9.4"
+    "node-sass": "^4.10.0"
   }
 }

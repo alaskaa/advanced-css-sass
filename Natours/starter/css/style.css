@@ -1,11 +1,3 @@
-/*
-COLORS:
-
-Light green: #7ed56f
-Medium green: #55c57a
-Dark green: #28b485
-
-*/
 *,
 *::after,
 *::before {
@@ -18,63 +10,7 @@ html {
   /* 1rem is 10px; - default 16px would equate 100% */ }
 
 body {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  /* font-size: 16px; */
-  line-height: 1.7;
-  color: #777;
-  padding: 3rem;
   box-sizing: border-box; }
-
-.header {
-  position: relative;
-  height: 95vh;
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero.jpg");
-  background-size: cover;
-  background-position: top;
-  /* clip-path: polygon(0 100px, 100% 50%, 0 100%); */
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  /* .logo:hover {
-		animation: moveInRight 1s ease-in;
-	} would play the animation on hover */ }
-  .header__logo-box {
-    position: absolute;
-    top: 4rem;
-    left: 4rem; }
-  .header__logo {
-    height: 3.5rem; }
-  .header__text-box {
-    position: absolute;
-    top: 40%;
-    /* these two properties are in relation to the parent element */
-    left: 50%;
-    transform: translate(-50%, -50%);
-    /* translate takes it to elements X and Y itself */
-    text-align: center; }
-
-.heading-primary {
-  color: #fff;
-  text-transform: uppercase;
-  backface-visibility: hidden;
-  /* gets rid of shakiness at end */
-  margin-bottom: 6rem; }
-  .heading-primary--main {
-    display: block;
-    font-size: 6rem;
-    font-weight: 400;
-    letter-spacing: 3.5rem;
-    animation-name: moveInLeft;
-    /* can provide animation name here and the duration for the class we apply it too */
-    animation-duration: 1.5s;
-    animation-timing-function: ease-out;
-    /* animation-delay: 3s; 
-		animation-iteration-count: 3; */ }
-  .heading-primary--sub {
-    display: block;
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 1.75rem;
-    animation: moveInRight 1s ease-out; }
 
 @keyframes moveInLeft {
   0% {
@@ -111,6 +47,38 @@ body {
     opacity: 1;
     transform: translate(0);
     /* this means the value of where the element would normally be so 0 */ } }
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  /* font-size: 16px; */
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem; }
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  /* gets rid of shakiness at end */
+  margin-bottom: 6rem; }
+  .heading-primary--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    animation-name: moveInLeft;
+    /* can provide animation name here and the duration for the class we apply it too */
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    /* animation-delay: 3s; 
+		animation-iteration-count: 3; */ }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+    animation: moveInRight 1s ease-out; }
 
 .btn:link, .btn:visited {
   /* link is a special pseudoclass */
@@ -168,3 +136,38 @@ body {
   animation: moveInBottom .5s ease-out .75s;
   animation-fill-mode: backwards;
   /* applies the 0% before the animation starts */ }
+
+.header {
+  position: relative;
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero.jpg");
+  background-size: cover;
+  background-position: top;
+  /* clip-path: polygon(0 100px, 100% 50%, 0 100%); */
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  /* .logo:hover {
+		animation: moveInRight 1s ease-in;
+	} would play the animation on hover */ }
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem; }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    /* these two properties are in relation to the parent element */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* translate takes it to elements X and Y itself */
+    text-align: center; }
+
+/*
+COLORS:
+
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+
+*/

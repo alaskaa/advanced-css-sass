@@ -1,0 +1,48 @@
+@keyframes moveInLeft {
+	0% {
+		opacity: 0;
+		/* transform: translateX(-100px); as it moves in from the right from the x axis */
+		transform: translateY(-10rem) rotate(180deg);
+	}
+
+	60% {
+		transform: rotate(360deg);
+	}
+
+	80% {
+		transform: translateX(10rem);
+	}
+
+	100% {
+		opacity: 1;
+		transform:translate(0); /* this means the value of where the element would normally be so 0 */
+	}
+}
+
+@keyframes moveInRight {
+	0% {
+		opacity: 0;
+		transform: translateX(10rem); /* as it moves in from the right from the x axis*/
+	}
+
+	80% {
+		transform: translateX(-1rem);
+	}
+
+	100% {
+		opacity: 1;
+		transform:translate(0); /* this means the value of where the element would normally be so 0 */
+	}
+}
+
+@keyframes moveInBottom {
+	0% {
+		opacity: 0;
+		transform: translateY(3rem); /* as it moves in from the right from the x axis*/
+	}
+
+	100% {
+		opacity: 1;
+		transform:translate(0); /* this means the value of where the element would normally be so 0 */
+	}
+}
