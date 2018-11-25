@@ -18,6 +18,10 @@ html {
 		font-size: 50%; // 1rem = 8px 8/16 = 50%
 	}
 
+	// need to write the bigger one first, because both would apply
+	// last declaration needs to be applied, so we need to put the smaller one last
+
+	// if we write a mobile first site, we need to write the lower ones first and then write the bigger ones
 	@include respond(big-desktop) {
 		font-size: 75%; // 1rem = 12, 12/16 = 75%
 	}
@@ -25,4 +29,9 @@ html {
 
 body {
 	box-sizing: border-box;
+	padding: 3rem;
+
+	@include respond(tab-port) {
+		padding: 0;
+	}
 }
