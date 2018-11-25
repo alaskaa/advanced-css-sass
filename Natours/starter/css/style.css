@@ -1,3 +1,19 @@
+/*
+ 
+ 0 - 600px PHONE
+ 600 - 900px TABLET PORTRAIT
+ 900 - 1200px TABLET LANDSCAPE
+
+ 1200 - 1800 DESKTOP NORMAL STYLES
+ 1800 - infinity BIG DESKTOP
+ */
+/* $breakpoint argument choices
+  phone
+  tab-port
+  tab-land
+  big-desktop
+ */
+/* 1em is 16px */
 *,
 *::after,
 *::before {
@@ -8,6 +24,15 @@
 html {
   font-size: 62.5%;
   /* 1rem is 10px; - default 16px would equate 100% */ }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
 
 body {
   box-sizing: border-box; }
