@@ -10,6 +10,10 @@
     &__logo-box {
         text-align: center;
         margin-bottom: 8rem;
+
+        @include respond(tab-port) {
+            margin-bottom: 6rem;
+        }
     }
 
     &__logo {
@@ -67,7 +71,7 @@
         padding-top: 2rem;
 
         @include respond(tab-port) {
-            text-align: center;
+            width: 100%;
             float: none;
         }
     }
