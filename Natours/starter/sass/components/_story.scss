@@ -28,10 +28,19 @@
         float: left; // element needs to be floated and have height and width
         -webkit-shape-outside: circle(50% at 50% 50%);
         shape-outside: circle(50% at 50% 50%); // first 50 relates to radius of the circle - twice of radius is diameter so 15rem
-        -webkit-clip-path: circle(50% at 50% 50%);
-        clip-path: circle(50% at 50% 50%);
+        overflow: hidden;
         transform: translateX(-3rem) skewX(12deg); // need to set skew here cos we can't have two transforms
-    
+        border-radius: 50%;
+
+        @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+            -webkit-clip-path: circle(50% at 50% 50%);
+            clip-path: circle(50% at 50% 50%);
+            -webkit-shape-outside: circle(50% at 50% 50%);
+            shape-outside: circle(50% at 50% 50%);
+            border-radius: none;
+        }
+
+
         @include respond(phone) {
             transform: translateX(-3rem) skew(0);
         }
